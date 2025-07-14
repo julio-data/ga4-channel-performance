@@ -1,19 +1,38 @@
 # GA4 Channel Performance Analysis
-Analyze traffic source performance in GA4 using BigQuery: visits, conversions, revenue, and more.
 
-This repository contains a SQL query that analyzes the performance of traffic sources in a GA4 dataset exported to BigQuery.
+Analyze traffic source performance in GA4 using BigQuery: visits, conversions, revenue, and user engagement metrics.
 
-The query includes:
+This repository contains **two SQL queries** that analyze the performance of traffic sources in a GA4 dataset exported to BigQuery.
+
+## 📁 Files
+
+### `channel_performance.sql`
+Analyzes conversion and revenue performance by traffic source.
+
+Includes:
 - Total estimated visits (user-session combinations)
 - Unique users per channel
-- Total number of purchases (purchase events)
-- Total revenue (based on the `value` parameter in purchase events)
-- Key metrics:
-  - **CR**: Conversion Rate per visit
-  - **visit_value**: Revenue per visit
-  - **AOV**: Average Order Value
+- Number of purchases (`purchase` events)
+- Total revenue (`value` parameter in purchase events)
 
-This analysis helps marketers and analysts understand which channels are driving the most value and where to optimize acquisition strategies.
+**Key metrics:**
+- **CR**: Conversion Rate per visit
+- **visit_value**: Revenue per visit
+- **AOV**: Average Order Value
+
+---
+
+### `behavior_metrics_per_channel.sql`
+Analyzes user engagement behavior by channel.
+
+Includes:
+- Average number of events per session
+- Average session duration (in minutes)
+- Estimated bounce rate (based on sessions with low engagement)
+
+This file helps complement conversion data with behavioral insights to evaluate content quality and user interaction.
+
+---
 
 ✅ 100% SQL  
 📊 Based on: `bigquery-public-data.ga4_obfuscated_sample_ecommerce`
